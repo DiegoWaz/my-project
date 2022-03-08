@@ -1,0 +1,266 @@
+// colors.scss
+$orange: #F0380F;
+$dark: #18181B;
+$white: #FFF;
+$gray: #f1eff0;
+
+// fonts.scss
+$font-primary: "Helvetica Neue";
+
+// variables.scss
+$font-weight-bold: 500;
+$line-height: 1.6rem;
+
+// colors.scss
+.color {
+  &__red {
+    color: $orange;
+  }
+
+  &__dark {
+    color: $dark;
+  }
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}
+
+// buttons.scss
+.btn {
+  border-radius: 150px;
+  padding: 10px 18px 12px;
+
+  &-red {
+    color: $white;
+    background-color: $orange;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+
+// override.scss bootstrap
+  .fs {
+    &-7 {
+      font-size: 12px;
+    }
+
+    &-8 {
+      font-size: 10px;
+    }
+  }
+
+  .container-fluid {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .modal {
+    &-dialog {
+      max-width: 70%;
+      margin: auto;
+    }
+
+    &-header {
+      border-bottom: 0;
+    }
+  }
+
+  .carousel {
+    &-item {
+      img {
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+
+    &-indicators {
+      [data-bs-target] {
+        background-color: $white;
+        opacity: 1;
+  
+        &.active {
+          background-color: $dark;
+        }
+      }
+    }
+  }
+
+// override.scss slick
+.slick {
+  &-slide {
+    padding: 10px;
+    height: inherit !important;
+  }
+
+  &-track {
+    display: flex !important;
+  }
+}
+
+body {
+  font-family: $font-primary;
+
+  h3, h4 {
+    line-height: $line-height;
+  }
+
+
+  .bg {
+    &__grey {
+      background-image: url("../images/grey.png");
+    }
+
+    &__orange {
+      background-color: $orange;
+    }
+  }
+
+  .icon-lock {
+    width: 25px;
+    height: 19px;
+  }
+
+  .featured {
+    background-size: cover;
+    height: 95vh;
+    position: relative;
+    background-image: url("../images/hero_mobile.png");
+  
+    @media screen and (min-width: 576px) {
+      background-image: url("../images/hero.png");
+    }
+  
+    @media screen and (min-width: 1024px) {
+      height: 100vh;
+    }
+  
+    .container-fluid {
+      justify-content: center;
+  
+      @media screen and (min-width: 992px) {
+        justify-content: space-between;
+      }
+    }
+  
+    nav {
+      padding-top: 30px;
+      padding-bottom: 40px;
+  
+      .navbar {
+        &-brand {
+          font-family: $font-primary;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 29px;
+          margin-right: 0;
+        }
+      }
+  
+      &.navbar {
+        &-light {
+          .navbar-nav .nav-item { 
+            margin-right: 25px;
+    
+            &:last-child {
+              margin-right: 0;
+            }
+    
+            .nav-link {
+              color: $dark;
+    
+              &.btn {
+                color: $white;
+                padding: 10px 18px 12px;
+              }
+            }
+          }
+        }
+      }    
+    }
+  
+    .sticker {
+      position: absolute;
+      bottom: -10px;
+      right: 20px;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background: $orange;
+      box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.25);
+      transform: rotate(11.56deg);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: $white;
+  
+      @media screen and (min-width: 1024px) {
+        bottom: auto;
+        top: 40%;
+        right: 10%;
+      }
+     
+      &__title {
+        font-size: 12px;
+        line-height: 14px;
+      }
+  
+      &__price {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 29px;
+        line-height: 35px;
+  
+        &__subtitle {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 10px;
+          line-height: 12px;
+        }
+      }
+    }
+  }  
+
+  .block {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 75%;
+      margin: auto;
+    }
+  }
+
+  .bullets {
+    button {
+      background: none repeat scroll 0 0 $white;
+      border: medium none;
+      cursor: pointer;
+      display: inline-block;
+      height: 5px !important;
+      width: 5px !important;
+      border-radius: 50% !important;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  footer {
+    .logo {
+      &__second {
+        text-align: left;
+
+        @media screen and (min-width: 768px) {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
